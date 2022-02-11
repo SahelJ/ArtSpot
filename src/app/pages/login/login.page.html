@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    
+    </ion-buttons>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-button color="dark" fill="clear" size="full">forgot e-mail/ password</ion-button>
+    <ion-button routerLink='/profil' color="dark" size="full">login</ion-button>
+    <ion-button routerLink='/register' color="light" size="full">register</ion-button>
+  </ion-card-content>
+</ion-content>

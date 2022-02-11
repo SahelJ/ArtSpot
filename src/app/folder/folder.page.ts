@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { OeuvreService } from 'src/app/services/oeuvre.service';
 
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
 })
-export class FolderPage implements OnInit {
+export class FolderPage{
   public folder: string;
+  oeuvres: Array<any>;
+  // loading = true;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private oeuvreService: OeuvreService) { 
+    this.load();
+  }
 
-  ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+  load() {
+    this.oeuvreService.getAll().subscribe(data=>{ this.oeuvres = data; });
   }
 
 }
